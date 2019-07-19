@@ -86,7 +86,7 @@
 html,
 body {
   height: 100%;
-  background-color: #282828;
+  background-color: #eae3da;
   color: #2b0800;
   font-size: 10px;
   font-family: 'Duepuntozero';
@@ -175,7 +175,7 @@ header#colorHeader .colorBlocks.cb4 {
   background-color: #2b0800;
   font-size: 2rem;
   letter-spacing: .2rem;
-  color: #282828;
+  color: #eae3da;
 }
 
 #currentlyPlaying #currentlyPlayingSong {
@@ -197,13 +197,13 @@ header#colorHeader .colorBlocks.cb4 {
   height: 15px;
   margin: 7px 0px 0;
   border: none;
-  background: #282828;
+  background: #eae3da;
   border-radius: 10px;
   color: #7ec447;
 }
 
 #currentlyPlaying progress::-webkit-progress-bar {
-  background: #282828;
+  background: #eae3da;
   border-radius: 10px;
 }
 
@@ -224,7 +224,7 @@ header#colorHeader .colorBlocks.cb4 {
 
 #songInfo {
   width: 100%;
-  color: #282828;
+  color: #eae3da;
   font-size: 1.8rem;
   letter-spacing: .3rem;
   font-weight: bold;
@@ -355,7 +355,7 @@ header#colorHeader .colorBlocks.cb4 {
 
 #infoToggle #volumeStuff {
   float: left;
-  color: #282828;
+  color: #eae3da;
 }
 
 #infoToggle #volumeStuff > p {
@@ -408,7 +408,7 @@ header#colorHeader .colorBlocks.cb4 {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background: #282828;
+  background: #eae3da;
   cursor: pointer;
   border: none;
 }
@@ -417,7 +417,7 @@ header#colorHeader .colorBlocks.cb4 {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background: #282828;
+  background: #eae3da;
   cursor: pointer;
   border: none;
 }
@@ -426,7 +426,7 @@ header#colorHeader .colorBlocks.cb4 {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background: #282828;
+  background: #eae3da;
   cursor: pointer;
   border: none;
 }
@@ -436,7 +436,7 @@ header#colorHeader .colorBlocks.cb4 {
   padding: 0px 5px 0;
   line-height: 30px;
   display: inline-block;
-  background: #282828;
+  background: #eae3da;
   -webkit-transition: all .2s;
   transition: all .2s;
   text-align: center;
