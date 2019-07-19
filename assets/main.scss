@@ -1,0 +1,616 @@
+// Fonts Duepuntozero
+@font-face {
+    font-family: 'Duepuntozero';
+    src: url('../assets/due/Duepuntozero-Bold.eot');
+    src: url('../assets/due/Duepuntozero-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/due/Duepuntozero-Bold.woff2') format('woff2'),
+        url('../assets/due/Duepuntozero-Bold.woff') format('woff'),
+        url('../assets/due/Duepuntozero-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Duepuntozero';
+    src: url('../assets/due/Duepuntozero-ExtraBold.eot');
+    src: url('../assets/due/Duepuntozero-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/due/Duepuntozero-ExtraBold.woff2') format('woff2'),
+        url('../assets/due/Duepuntozero-ExtraBold.woff') format('woff'),
+        url('../assets/due/Duepuntozero-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Duepuntozero';
+    src: url('../assets/due/Duepuntozero.eot');
+    src: url('../assets/due/Duepuntozero.eot?#iefix') format('embedded-opentype'),
+        url('../assets/due/Duepuntozero.woff2') format('woff2'),
+        url('../assets/due/Duepuntozero.woff') format('woff'),
+        url('../assets/due/Duepuntozero.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@mixin duereg {
+    //font-family: 'duepuntozeroregular';
+    font-weight: normal;
+}
+
+@mixin duebold {
+    //font-family: 'duepuntozerobold';
+    font-weight: bold;
+}
+
+@mixin duexbold {
+    //font-family: 'duepuntozeroextra_bold';
+    font-weight: 800;
+}
+
+$colors: (cream: #eae3da,
+    purp: #602661,
+    green: #7ec447,
+    yellow: #f9c754,
+    tangerine: #ee5b39,
+    choc: #2b0800,
+    darkpurple: #3b013f);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+@keyframes equalizer {
+    0% {
+        height: 90%;
+    }
+
+    15% {
+        height: 70%;
+    }
+
+    30% {
+        height: 83%;
+    }
+
+    45% {
+        height: 100%;
+    }
+
+    60% {
+        height: 94%;
+    }
+
+    85% {
+        height: 73%;
+    }
+
+    0% {
+        height: 90%;
+    }
+}
+
+.equalizer {
+    animation: equalizer 2.5s linear infinite;
+    vertical-align: text-bottom;
+}
+
+@mixin progressBG {
+    background: color(cream);
+    border-radius: 10px;
+}
+
+@mixin progressBar {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    margin: 7px 0px 0;
+    border: none;
+    @include progressBG;
+}
+
+@mixin volumeThumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background: color(yellow);
+    cursor: pointer;
+    border: none;
+}
+
+@mixin volumeTrack {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: color(cream);
+    cursor: pointer;
+    border: none;
+}
+
+@mixin smallScreen {
+    @media (max-width: 470px) {
+        @content;
+    }
+}
+
+$offwhite: #efefee;
+$gray: #d5d1ca;
+$turq: #01bcc6;
+$blue: #008eab;
+$darkblue: #005b7c;
+$black: darken($darkblue, 30%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: color(cream);
+    color: color(choc);
+    font-size: 10px;
+    font-family: 'Duepuntozero';
+    text-transform: uppercase;
+    @include duereg;
+}
+
+.container {
+    padding: 20px;
+    width: 480px;
+    max-width: 100%;
+}
+
+// 1.  H E A D E R - M I N I H U B
+// ========================
+
+header#colorHeader {
+    position: relative;
+    height: 150px;
+    transition: all .5s ease;
+    transform: scale(1);
+
+    @include smallScreen {
+        height: 100px;
+
+        h1 {
+            transform: scale(.8);
+            margin-left: -30px;
+        }
+    }
+
+    h1#miniHub {
+        position: absolute;
+        bottom: 10px;
+        left: 13px;
+        font-size: 10.8rem;
+        text-transform: uppercase;
+        @include duexbold;
+        height: 8rem;
+    }
+
+    .colorBlocks {
+
+        width: 6rem;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        margin-right: -3px;
+
+        &.cb1 {
+            background-color: color(purp);
+            height: 80%;
+            animation-delay: 0s;
+        }
+
+        &.cb2 {
+            background-color: color(green);
+            height: 90%;
+            animation-delay: -.8s;
+            left: 6rem;
+        }
+
+        &.cb3 {
+            background-color: color(yellow);
+            height: 100%;
+            animation-delay: -1.2s;
+            left: 6rem * 2;
+        }
+
+        &.cb4 {
+            background-color: color(tangerine);
+            height: 84%;
+            animation-delay: -.5s;
+            left: 6rem *3;
+        }
+    }
+}
+
+
+// 2.  C U R R E N T L Y   P L A Y I N G
+// ========================
+
+
+#currentlyPlaying {
+    margin-top: 20px;
+    padding: 5px 8px;
+    background-color: color(choc);
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: color(cream);
+
+    #currentlyPlayingSong {
+        @include duebold;
+        color: color(yellow);
+        text-transform: uppercase;
+    }
+
+    #currentSong {
+        float: right;
+        text-transform: capitalize;
+    }
+
+
+    // P R O G R E S S    B A R 
+    // ========================
+
+    progress {
+        @include progressBar;
+        color: color(green);
+    }
+
+    progress::-webkit-progress-bar {
+        @include progressBG;
+    }
+
+    progress>span {
+        background: color(green);
+        border-radius: 10px;
+    }
+
+    progress::-webkit-progress-value {
+        background: color(green);
+        border-radius: 10px;
+    }
+
+    progress::-moz-progress-bar {
+        background: color(green);
+        border-radius: 10px;
+    }
+}
+
+// 3.  T O G G L E    S O N G    I N F O
+// ========================
+#songInfo {
+    width: 100%;
+    color: color(cream);
+    font-size: 1.8rem;
+    letter-spacing: .3rem;
+    @include duebold;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    background-color: color(purp);
+    border-top: 5px solid color(darkpurple);
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    max-height: 300px;
+    transition: all 1s;
+
+    @include smallScreen {
+        max-height: none;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        opacity: 1;
+        transition: all .2s;
+    }
+
+    a img:hover {
+        opacity: .8;
+        transform: translateY(-5px);
+    }
+
+    #albumArt {
+        float: left;
+        width: 46%;
+        max-width: 100%;
+
+        @include smallScreen {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    #moreInfo {
+        width: 54%;
+        padding-left: 10px;
+        float: right;
+        max-width: 100%;
+        transition: all .2s;
+
+        @include smallScreen {
+            width: 100%;
+            float: none;
+            padding: 0;
+        }
+    }
+
+    #feat {
+        background: color(darkpurple);
+        background: linear-gradient(90deg, color(darkpurple), transparent);
+        padding: 8px 5px;
+        @include duebold;
+    }
+
+    #albumTitle {
+        color: color(tangerine);
+        font-size: 2.2rem;
+        padding-top: 10px;
+    }
+
+    .links {
+        text-align: right;
+        line-height: 1rem;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+
+        @include smallScreen {
+            text-align: center;
+            position: relative;
+            bottom: auto;
+            right: auto;
+
+            img {
+                max-width: 100%;
+                transform: translate(0) rotate(0)
+            }
+
+            #artistUrl {
+                transform: translate(0) rotate(-3deg);
+            }
+        }
+    }
+
+    #artistUrl {
+        transform: translate(-5px) rotate(-15deg);
+        display: block;
+    }
+
+    img#spotify {
+        width: 120px;
+    }
+
+}
+
+.hide {
+    max-height: 0px !important;
+    padding: 0 !important;
+}
+
+
+// 4.  V O L U M E   &   I N F O   T O G G L E
+// ========================
+
+
+#infoToggle {
+    background-color: color(darkpurple);
+    padding: 5px 10px;
+    @include duebold;
+    letter-spacing: .1rem;
+    text-align: center;
+
+    #volumeStuff {
+        float: left;
+        color: color(cream);
+
+        &>p {
+            display: none;
+        }
+
+        // V O L U M E    C O N T R O L
+        // ========================
+
+        input#volumeSlider {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            height: 15px;
+
+            &:focus {
+                outline: none;
+            }
+
+            // Thumb
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                @include volumeThumb;
+                margin-top: -8px;
+            }
+
+            &::-moz-range-thumb {
+                @include volumeThumb;
+            }
+
+            &::-ms-thumb {
+                @include volumeThumb;
+                margin: auto;
+                z-index: 5;
+            }
+
+            // Track
+            &::-webkit-slider-runnable-track {
+                @include volumeTrack;
+                //margin-top: -12px;
+
+            }
+
+            &::-moz-range-track {
+                @include volumeTrack;
+            }
+
+            &::-ms-track {
+                @include volumeTrack;
+            }
+
+
+        }
+
+    }
+}
+
+#infoToggle .info {
+    font-size: 1.6rem;
+    padding: 0px 5px 0;
+    line-height: 30px;
+    display: inline-block;
+    background: color(cream);
+    transition: all .2s;
+    text-align: center;
+
+    &:hover {
+        background-color: color(tangerine);
+        transform: rotate(15deg) scale(1.1);
+        border-radius: 15px;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+// ?.   P L A Y L I S T
+// =======================
+
+#playList {
+    height: 450px;
+    margin-top: 20px;
+    position: relative;
+    background-color: color(tangerine);
+    text-align: left;
+    z-index: 0;
+
+    @include smallScreen {
+        height: auto;
+    }
+
+    #playlistClippyBg {
+        clip-path: polygon(0 0, 100% 0, 79% 85%, 0% 100%);
+        background-color: color(yellow);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .playlistContainer {
+        position: relative;
+        z-index: 2;
+        padding: 10px;
+    }
+
+    // P L A Y  &   P A U S E
+
+    #controls {
+        width: 165px;
+        height: 10px;
+        position: relative;
+        float: right;
+
+        @include smallScreen {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            float: none;
+        }
+
+        i {
+            cursor: pointer;
+            float: right;
+            transition: color .2s;
+
+            @include smallScreen {
+                float: none;
+            }
+
+            &:hover {
+                color: color(green);
+            }
+
+            &.fa-play-circle {
+                transform: translate(-40px, -31px);
+
+                @include smallScreen {
+                    transform: translate(0);
+                }
+            }
+        }
+
+        &:after {
+            clear: both;
+        }
+    }
+
+    h2.playList {
+        font-size: 5.3rem;
+        text-transform: uppercase;
+        @include duexbold;
+        height: 4.9rem;
+
+        @include smallScreen {
+            text-align: center;
+        }
+    }
+}
+
+
+#songList {
+
+    ol {
+        @include duebold;
+        font-size: 2.4rem;
+        list-style-position: inside;
+    }
+
+    li {
+        margin-bottom: 8px;
+
+
+        &:hover {
+            cursor: pointer;
+            color: color(purp)
+        }
+
+        &:nth-child(odd) {
+            background: rgba(color(choc), .1)
+        }
+
+        span {
+            @include duereg;
+            pointer-events: none;
+            font-size: 1.8rem;
+            display: block;
+            height: 1.8rem;
+            margin-top: -5px;
+
+            &:before {
+                content: '// ';
+            }
+        }
+    }
+}
+
+// FOOTER
+footer {
+    @include duebold;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-align: right;
+}
